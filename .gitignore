@@ -1,0 +1,23 @@
+*.class
+
+# Package Files #
+*.war
+
+target/
+.idea/
+
+# intelliJ idea
+*.iml
+*.ipr
+*.iws
+
+*.classpath
+*.project
+
+*.launch
+
+#plik konfiguracyjny pluginu do Jiry
+atlassian-ide-plugin.xml
+
+#in this project persistence is managed by spring, this file is only for Intellij to provide code completion
+persistence.xml
