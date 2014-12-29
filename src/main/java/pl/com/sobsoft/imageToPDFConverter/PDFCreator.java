@@ -39,6 +39,7 @@ public class PDFCreator {
             }
 
             document.setPageSize(new Rectangle(image.getScaledWidth(), image.getScaledHeight()));
+            document.setMargins(0,0,0,0);
             document.newPage();
             document.add(image);
         }
