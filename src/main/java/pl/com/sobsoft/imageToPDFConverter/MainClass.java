@@ -27,9 +27,6 @@ public class MainClass {
             }
         }
 
-
-
-
         try {
             mainClass.execute();
         } catch (FileNotFoundException e) {
@@ -63,7 +60,7 @@ public class MainClass {
 
     private void createPDF(List<File> images) throws IOException, DocumentException {
         PDFCreator pdfCreator = new PDFCreator(outputFileName, images);
-        pdfCreator.setRotation(rotation);
+        pdfCreator.setRotationDegrees(rotation);
         pdfCreator.writeDoc();
     }
 
