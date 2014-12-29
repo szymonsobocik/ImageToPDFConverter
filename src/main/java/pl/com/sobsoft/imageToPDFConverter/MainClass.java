@@ -14,9 +14,22 @@ import java.util.List;
  */
 public class MainClass {
 
+    private String outputFileName = "TestPDF.pdf";
+    private Float rotation;
+
     public static void main(String[] args) {
 
         MainClass mainClass = new MainClass();
+        if (args != null && args.length > 0){
+            mainClass.outputFileName =  args[0];
+            if (args.length > 1){
+                mainClass.rotation = new Float(args[1]);
+            }
+        }
+
+
+
+
         try {
             mainClass.execute();
         } catch (FileNotFoundException e) {
@@ -49,7 +62,8 @@ public class MainClass {
     }
 
     private void createPDF(List<File> images) throws IOException, DocumentException {
-        PDFCreator pdfCreator = new PDFCreator("TestPDF.pdf", images);
+        PDFCreator pdfCreator = new PDFCreator(outputFileName, images);
+        pdfCreator.setRotation(rotation);
         pdfCreator.writeDoc();
     }
 
